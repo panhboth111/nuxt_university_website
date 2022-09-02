@@ -7,6 +7,37 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "This is not an official website of Kirirom Institute of Technology. This website was made by a KIT student for learning purposes online. The informatio you find here are either false or not up-to-date.",
+      },
+      {
+        name: "keywords",
+        content: "kirirom, kirirom institute of technology, kit",
+      },
+      {
+        hid: "og:title",
+        name: "og:title",
+        content: "University Website",
+      },
+      {
+        hid: "og:site_name",
+        name: "og:site_name",
+        content: "University Website",
+      },
+      {
+        hid: "og:description",
+        name: "og:description",
+        content:
+          "This is not an official website of Kirirom Institute of Technology. This website was made by a KIT student for learning purposes online. The informatio you find here are either false or not up-to-date.",
+      },
+      {
+        hid: "og:image",
+        name: "og:image",
+        content: "/hero.jpeg",
+      },
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
