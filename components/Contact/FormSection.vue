@@ -51,7 +51,7 @@
               <input
                 type="text"
                 id="full_name"
-                v-model="email.name"
+                v-model="email.from_name"
                 class="bg-gray-100 bg-clip-padding text-primary text-sm rounded-md border-transparent focus:border-transparent focus:ring-0 focus:outline-none focus:bg-white block w-full p-2.5"
               />
               <span class="text-xs text-red-600">{{ errors[0] }}</span>
@@ -63,7 +63,7 @@
                 >Email <span class="text-red-600 text-sm">*</span></label
               >
               <input
-                v-model="email.email"
+                v-model="email.from_email"
                 type="text"
                 name="email"
                 class="bg-gray-100 bg-clip-padding text-primary text-sm rounded-md border-transparent focus:border-transparent focus:ring-0 focus:outline-none focus:bg-white block w-full p-2.5"
@@ -77,7 +77,7 @@
                 >Phone Number <span class="text-red-600 text-sm">*</span></label
               >
               <input
-                v-model="email.phone"
+                v-model="email.from_phone"
                 type="number"
                 onkeydown="return event.keyCode === 69 ? false : event.keyCode === 189 ? false : event.keyCode === 190 ? false : true"
                 class="bg-gray-100 bg-clip-padding text-primary text-sm rounded-md border-transparent focus:border-transparent focus:ring-0 focus:outline-none focus:bg-white block w-full p-2.5"
@@ -139,7 +139,7 @@ import { extend } from "vee-validate";
 import { required, email } from "vee-validate/dist/rules";
 
 import { isValidPhoneNumber } from "libphonenumber-js";
-
+import emailjs from "emailjs-com";
 extend("email", { ...email, message: "Invalid Email" });
 
 extend("required", {
@@ -172,9 +172,9 @@ export default {
   data() {
     return {
       email: {
-        name: "",
-        email: "",
-        phone: "",
+        from_name: "",
+        from_email: "",
+        from_phone: "",
         subject: "",
         message: "",
       },
@@ -183,6 +183,13 @@ export default {
         error: false,
         show: true,
       },
+      email: {
+        from_name: null,
+        restaurant_name: null,
+        phone: null,
+        email_from: null,
+        message: null,
+      },
     };
   },
   methods: {
@@ -190,9 +197,14 @@ export default {
       this.$refs.form.validate();
       this.msg.show = true;
       try {
-        const response = await this.$axios.$post("/emails", {
-          ...this.email,
-        });
+        emailjs.send(
+          "service_1wfhczi",
+          "template_26okxlm",
+          {
+            ...this.email,
+          },
+          "yBa9xb0dWu-2t107d"
+        );
         this.msg.error = false;
         this.msg.content =
           "Email sent successfully. Our team will contact you as soon as possible.";

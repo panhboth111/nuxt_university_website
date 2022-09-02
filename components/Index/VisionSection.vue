@@ -16,11 +16,13 @@
       excellent education, cutting-edge research, and a commitment to green
       development and a multicultural community.
     </div>
-    <button
-      class="bg-primary text-xs lg:text-base hover:bg-opacity-0 border border-primary px-4 lg:px-10 py-2 text-white hover:text-primary mr-2 transition ease-in-out duration-700"
-    >
-      READ MORE
-    </button>
+    <nuxt-link to="/about">
+      <button
+        class="bg-primary text-xs lg:text-base hover:bg-opacity-0 border border-primary px-4 lg:px-10 py-2 text-white hover:text-primary mr-2 transition ease-in-out duration-700"
+      >
+        READ MORE
+      </button>
+    </nuxt-link>
   </div>
 </template>
 

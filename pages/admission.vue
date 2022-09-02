@@ -18,7 +18,11 @@
       description="At KIT, we foster camaraderie and collaboration. It is important for us that our students are nurtured in their creativity and innovation. We would like to see the passion and commitment you have when interacting with our multicultural environment, whether in class, internship, sports, or other activities the community will organize."
     />
     <div class="mt-10 md:px-20 px-4">
-      <button class="bg-primary px-10 py-2 text-white">Enroll Now</button>
+      <nuxt-link to="/contact"
+        ><button class="bg-primary px-10 py-2 text-white">
+          Enroll Now
+        </button></nuxt-link
+      >
     </div>
   </div>
 </template>

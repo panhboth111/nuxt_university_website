@@ -17,16 +17,20 @@
       <!-- subtitle text -->
       <div class="font-thin">WELCOME TO OUR UNIVERSITY</div>
       <div class="mt-4">
-        <button
-          class="bg-primary hover:bg-opacity-0 border border-primary px-10 py-2 text-white hover:text-primary mr-2 transition ease-in-out duration-700"
-        >
-          INQUIRE NOW
-        </button>
-        <button
-          class="border border-white hover:bg-white hover:text-black px-10 py-2 transition ease-in-out duration-700"
-        >
-          ABOUT US
-        </button>
+        <nuxt-link to="/contact">
+          <button
+            class="bg-primary hover:bg-opacity-0 border border-primary px-10 py-2 text-white hover:text-primary mr-2 transition ease-in-out duration-700"
+          >
+            INQUIRE NOW
+          </button>
+        </nuxt-link>
+        <nuxt-link to="/about">
+          <button
+            class="border border-white hover:bg-white hover:text-black px-10 py-2 transition ease-in-out duration-700"
+          >
+            ABOUT US
+          </button>
+        </nuxt-link>
       </div>
     </div>
   </div>
