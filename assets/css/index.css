@@ -1,0 +1,7 @@
+* {
+  font-family: "Battambang", cursive;
+  font-family: "Roboto", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
