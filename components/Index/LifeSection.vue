@@ -3,7 +3,11 @@
     class="h-screen flex lg:flex-row flex-col lg:space-x-6 space-y-20 justify-center items-center px-4 lg:px-20"
   >
     <div class="lg:w-1/3">
-      <Title title="STUDENTs' LIFE AT KIT" color_title="text-primary" />
+      <Title
+        :title="$t('home.life_section.student_life')"
+        color_title="text-primary"
+      />
+
       <div
         data-aos="zoom-in-up"
         data-aos-duration="1400"
@@ -20,7 +24,7 @@
       <div class="flex uppercase" data-aos="fade-in" data-aos-duration="1700">
         <NuxtLink to="/about">
           <div class="border-b-2 border-primary text-primary text-xs font-bold">
-            See more
+            {{ $t("home.life_section.see_more") }}
           </div></NuxtLink
         >
       </div>

@@ -1,6 +1,9 @@
 <template>
   <div class="md:px-20 px-4 pt-16">
-    <Title title="Our Community" color_title="text-primary" />
+    <Title
+      :title="$t('about.community_section.title')"
+      color_title="text-primary"
+    />
 
     <div
       data-aos="fade-up"
@@ -8,14 +11,10 @@
       class="text-xs leading-6 font-extralight text-gray-600 my-5 text-justify"
     >
       <div class="py-3">
-        vKirirom Nature Land, Cambodia envisions building a city of the future.
-        It believes in building a community that creates an environment of
-        co-working and co-living with nature.
+        {{ $t("about.community_section.text1") }}
       </div>
       <div class="py-3">
-        “Vibrant community combining cutting-edge technology, leading
-        university, and sustainability amidst the forest and mountain of
-        Cambodia’s national park.”
+        {{ $t("about.community_section.text2") }}
       </div>
     </div>
   </div>

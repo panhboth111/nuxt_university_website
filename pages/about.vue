@@ -1,8 +1,8 @@
 <template>
   <div>
     <HeroSection
-      title="Kirirom Institute of Technology"
-      subtitle="Everything about "
+      :title="$t('about.hero_section.title')"
+      :subtitle="$t('about.hero_section.subtitle')"
       image="/about/hero.jpeg"
     />
     <HistorySection />
@@ -11,8 +11,8 @@
     <MissionSection />
     <CommunitySection />
     <CardSection
-      description="A leading science and technology university in Southeast Asia with excellent education, cutting-edge research, and a commitment to green development and a multicultural community."
-      title="Our Vision"
+      :description="$t('about.vision_section.description')"
+      :title="$t('about.vision_section.title')"
       image="/about/vision.jpeg"
     />
   </div>

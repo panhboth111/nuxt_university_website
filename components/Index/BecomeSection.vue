@@ -8,7 +8,7 @@ export default {
   methods: {
     typeEffect() {
       const typed = new Typed(".typed", {
-        strings: ["SIGN UP TODAY AND BECOME ONE OF US!"],
+        strings: [this.$t("home.become_section.text")],
         typeSpeed: 20,
         backSpeed: 20,
         backDelay: 3000,

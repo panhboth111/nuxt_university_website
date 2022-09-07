@@ -4,7 +4,7 @@
       <div class="">
         <ul class="flex flex-col mt-4 md:flex-row md:space-x-12 md:mt-0">
           <NuxtLink
-            v-for="(item, n) in navItems"
+            v-for="(item, n) in items"
             :key="n"
             :to="item.to"
             class="block py-2 pr-4 pl-3 text-xs md:border-0 hover:text-primary md:p-0"
@@ -76,15 +76,15 @@ export default {
   components: {
     Contact,
   },
-  data() {
-    return {
-      navItems: [
-        { title: "Home", to: "/" },
-        { title: "About", to: "/about" },
-        { title: "Admission", to: "/admission" },
-        { title: "Contact", to: "/contact" },
-      ],
-    };
+  computed: {
+    items() {
+      return [
+        { title: this.$t("navbar.home"), to: "/" },
+        { title: this.$t("navbar.about"), to: "/about" },
+        { title: this.$t("navbar.admission"), to: "/admission" },
+        { title: this.$t("navbar.contact"), to: "/contact" },
+      ];
+    },
   },
 };
 </script>

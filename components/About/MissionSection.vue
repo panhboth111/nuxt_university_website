@@ -1,6 +1,9 @@
 <template>
   <div class="md:px-20 px-4 py-16">
-    <Title title="Our Mission" color_title="text-primary" />
+    <Title
+      :title="$t('about.mission_section.title')"
+      color_title="text-primary"
+    />
     <div class="mt-10 h-about_mission grid grid-cols-1 lg:grid-cols-4 gap-4">
       <div
         class="h-full row-span-2 object-cover bg-center bg-cover relative"
@@ -11,8 +14,7 @@
         <div
           class="absolute bottom-0 lg:top-1/2 w-full text-center text-white px-4"
         >
-          Provide life-changing academic and career opportunities for all
-          students, regardless of their family socio-economic backgrounds;
+          {{ $t("about.mission_section.text1") }}
         </div>
       </div>
       <div
@@ -24,7 +26,7 @@
         <div
           class="absolute bottom-0 lg:top-1/2 w-full text-center text-white px-4"
         >
-          Foster innovation, creativity and team spirit among students;
+          {{ $t("about.mission_section.text2") }}
         </div>
       </div>
       <div
@@ -36,8 +38,7 @@
         <div
           class="absolute bottom-0 lg:top-1/2 w-full text-center text-white px-4"
         >
-          Establish a diverse and multicultural community conducive to studying,
-          living and working;
+          {{ $t("about.mission_section.text3") }}
         </div>
       </div>
       <div
@@ -49,8 +50,7 @@
         <div
           class="absolute bottom-0 lg:top-1/2 w-full text-center text-white px-4"
         >
-          Produce young leaders​​​ with a local and global understanding and
-          respect;
+          {{ $t("about.mission_section.text4") }}
         </div>
       </div>
     </div>
@@ -61,8 +61,7 @@
       }"
     >
       <div class="absolute top-1/2 w-full text-center text-white px-4">
-        Serve national and regional needs for a digital workforce with the
-        fast-changing context of digital transformation and Industry 4.0.
+        {{ $t("about.mission_section.text5") }}
       </div>
     </div>
   </div>

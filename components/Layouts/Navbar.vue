@@ -10,16 +10,18 @@
     <!-- left side of the navbar (logo and items)  -->
     <div class="flex items-end">
       <!-- logo -->
-      <div class="mr-20">
-        <img src="/logo.png" class="w-10" alt="" />
-      </div>
+      <nuxt-link :to="localePath('/')">
+        <div class="mr-20">
+          <img src="/logo.png" class="w-10" alt="" />
+        </div>
+      </nuxt-link>
       <!-- items (hidden on mobile screens) -->
       <ul class="hidden lg:flex items-center text-sm">
         <nuxt-link
           class="mx-6"
           v-for="(item, index) in items"
           :key="index"
-          :to="item.to"
+          :to="localePath(item.to)"
           ><li
             class="hover:text-primary font-thin hover:font-bold transition ease-in-out duration-700"
           >
@@ -29,8 +31,12 @@
       </ul>
     </div>
     <!-- right side of the navbar  -->
-    <div class="flex font-thin">
-      <div class="text-sm hidden lg:block">EN</div>
+    <div class="flex font-thin items-center">
+      <nuxt-link :to="switchLocalePath($i18n.locale == 'en' ? 'km' : 'en')"
+        ><div class="text-sm uppercase mr-4">
+          {{ $i18n.locale }}
+        </div></nuxt-link
+      >
       <MenuIcon :toggleDrawer="toggleDrawer" />
       <div v-show="drawer" class="lg:hidden block">
         <div
@@ -38,7 +44,7 @@
         >
           <div class="flex justify-between w-full">
             <div>
-              <NuxtLink to="/" class="flex items-center">
+              <NuxtLink :to="localePath('/')" class="flex items-center">
                 <img
                   class="md:h-8 h-6"
                   src="~static/logo.png"
@@ -70,7 +76,7 @@
             <NuxtLink
               v-for="(item, n) in items"
               :key="n"
-              :to="item.to"
+              :to="localePath(item.to)"
               class="block pt-4 text-xs hover:text-primary text-center text-black"
               active-class="text-primary border-b border-primary font-bold "
               exact=""
@@ -91,15 +97,19 @@ export default {
     MenuIcon,
   },
   data: () => ({
-    items: [
-      { title: "Home", to: "/" },
-      { title: "About", to: "/about" },
-      { title: "Admission", to: "/admission" },
-      { title: "Contact", to: "/contact" },
-    ],
     scrollPosition: 0,
     drawer: false,
   }),
+  computed: {
+    items() {
+      return [
+        { title: this.$t("navbar.home"), to: "/" },
+        { title: this.$t("navbar.about"), to: "/about" },
+        { title: this.$t("navbar.admission"), to: "/admission" },
+        { title: this.$t("navbar.contact"), to: "/contact" },
+      ];
+    },
+  },
   methods: {
     handleScroll() {
       try {
