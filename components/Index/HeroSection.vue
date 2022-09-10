@@ -12,7 +12,7 @@
       <div
         class="font-bold lg:text-5xl text-3xl"
         id="hero-title"
-        data-aos="zoom-in-up"
+        data-aos="zoom-in"
         data-aos-duration="1400"
       >
         {{ $t("home.hero_section.title1") }}<br />
